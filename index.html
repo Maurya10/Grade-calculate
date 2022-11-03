@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+    background: linear-gradient(45deg,#fc4646,#737c2e);    
+    }
+.flex-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}    
+    .container .card{
+        height: 70vh;
+        width: 400px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 20px;
+    box-shadow: rgba(0,0,0,0.15) 2.4px 2.4px 3.2px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);    
+    }
+    h3{
+        text-align: center;
+        position: relative;
+        top: 10%;
+        font-weight: 500;
+        font-size: 40px;
+        color: #fff;
+        font-family: sans-seif; 
+     
+    }
+    .input{
+        margin: 10px 0px;
+    }
+    .input input{
+        width:90%;
+        margin:10px;
+        height:20px;
+        outline:none;
+        border:none;
+        font-weight:bold;
+        text-indent:30px;
+        padding:3px 5px;
+        color:#000;
+        box-shadow: rgba(0,0,0,0.15) 2.4px 2.4px 3.2px;
+    }
+    ::placeholder{
+        font-weight:bold;
+        text-indent:30px;
+        padding:3px 5px;
+        color:#000;
+
+    }
+    button{
+        box-shadow: rgba(0,0,0,0.15) 2.4px 2.4px 3.2px;
+        background-color :crimson;
+        outline:none;
+        border:none;
+        font-weight:bold;
+        padding:3px 15px;
+        color:#fff;
+        margin:5px 150px
+        
+    }
+    button:hover{
+        background-color: rgb(192,14,50);
+    }
+    p{
+        color :crimson;
+        font-weight:bold;
+        padding:3px 15px;
+        color:#fff;
+        text-align:center;
+
+        
+
+    }
+    h2{
+        text-align: corner;
+        position:side corner;
+        bottom: 10%;
+        font-weight: bold;
+        font-size: 20px;
+        color: #fff;
+        font-family: sans-seif; 
+     
+    }
+</style>
+<body>
+    <div class="container">
+        <h3>student grade calculator</h3>
+        <h2>Developed by : Sneha Maurya</h2>
+        <h2>Date: 22/10/2022</h2>
+        <div class="flex-box">
+            <div class="card">
+                <div class="input">
+                    <input type="number" id="p" placeholder="physics">
+                    <input type="number" id="c" placeholder="chamistry">
+                    <input type="number" id="m" placeholder="maths">
+                    <input type="number" id="h" placeholder="hindi">
+                    <input type="number" id="e" placeholder="english">
+                    <button onclick="calculate()">calculate marks</button>
+                    <p id="demo"></p>
+                    <p id="demo1"></p>
+                    <p id="demo2"></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function calculate(){
+    let p=document.getElementById("p").value;
+    let c=document.getElementById("c").value;
+    let m=document.getElementById("m").value;
+    let h=document.getElementById("h").value;
+    let e=document.getElementById("e").value;
+    const total=parseFloat(p)+parseFloat(c)+parseFloat(m)+parseFloat(h)+parseFloat(e);
+    document.getElementById("demo").innerHTML=`your total number is ${total}`;
+    const per=(total/500)*100;
+    document.getElementById("demo1").innerHTML=`your total percentage is ${per}`;
+    if(per>=90){
+        document.getElementById("demo2").innerHTML=`your grade is a++`;
+        
+    }
+    else if(per>=80){
+        document.getElementById("demo2").innerHTML=`your grade is a`;
+    }
+   else  if(per>=70){
+        document.getElementById("demo2").innerHTML=`your grade is b++`;
+    }
+    else if(per>=60){
+        document.getElementById("demo2").innerHTML=`your grade is b`;
+    }
+    else if(per>=50){
+        document.getElementById("demo2").innerHTML=`your grade is c++`;
+    }
+    else if(per>=40){
+        document.getElementById("demo2").innerHTML=`your grade is c`;
+    }
+    else{
+        document.getElementById("demo2").innerHTML=`your are failed`;
+    }
+}
+    
+</script>
+</html>
